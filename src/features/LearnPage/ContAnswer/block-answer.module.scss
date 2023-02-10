@@ -1,0 +1,14 @@
+.wrapBlockAnswer{
+display: none;
+}
+.blockAnswerActivate{
+  display: block;
+}
+
+.answerWrap{
+margin: 10px 0;
+  .answer{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}

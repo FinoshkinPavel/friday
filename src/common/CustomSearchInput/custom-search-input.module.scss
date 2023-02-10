@@ -1,0 +1,17 @@
+.wrapCustomInput {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+
+  .searchIcon {
+    padding: 0 15px 0 15px;
+    color: gray;
+  }
+
+  .input {
+    width: 85%;
+    border: none;
+    outline: none;
+  }
+}

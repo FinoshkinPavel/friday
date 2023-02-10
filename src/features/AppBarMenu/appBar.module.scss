@@ -1,0 +1,18 @@
+.avatarWrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .name {
+    padding-right: 10px;
+  }
+
+  .iconBtMenu{
+    font-size: 18px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+
+
+}

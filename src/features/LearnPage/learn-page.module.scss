@@ -1,0 +1,10 @@
+@import "src/scss/flex-pattern";
+.wrapCard{
+  @extend %cardContainer;
+  height: 370px;
+  overflow: hidden;
+}
+
+.wrapCardActivate{
+  height: 100px;
+}

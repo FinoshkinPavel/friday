@@ -1,0 +1,32 @@
+@import "../../scss/flex-pattern";
+
+.wrapMyInfoPage {
+
+  width: 100%;
+
+  .linkToPackList {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 15px 0 0 15px;
+
+  }
+
+  .cardContain{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+
+    .blockAvaWithBtn{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .cardWrap {
+    @extend %cardContainer;
+    height: 300px;
+  }
+}

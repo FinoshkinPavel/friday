@@ -1,0 +1,26 @@
+.childrenWrap {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .blockNewCoverWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .blockCover {
+      width: 100px;
+      height: 50px;
+
+      & img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+}
