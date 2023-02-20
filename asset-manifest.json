@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/friday/static/css/main.13f056b8.css",
-    "main.js": "/friday/static/js/main.b84774bd.js",
+    "main.js": "/friday/static/js/main.3fa2cc5a.js",
     "static/js/787.28cb0dcd.chunk.js": "/friday/static/js/787.28cb0dcd.chunk.js",
     "static/media/content-panda-logo-large.png": "/friday/static/media/content-panda-logo-large.3313d000cc0fcabf3352.png",
     "index.html": "/friday/index.html",
     "main.13f056b8.css.map": "/friday/static/css/main.13f056b8.css.map",
-    "main.b84774bd.js.map": "/friday/static/js/main.b84774bd.js.map",
+    "main.3fa2cc5a.js.map": "/friday/static/js/main.3fa2cc5a.js.map",
     "787.28cb0dcd.chunk.js.map": "/friday/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13f056b8.css",
-    "static/js/main.b84774bd.js"
+    "static/js/main.3fa2cc5a.js"
   ]
 }
