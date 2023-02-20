@@ -9,7 +9,7 @@ import {
 import { RegistrationPage } from "../features/RegistrationPage/RegistartionPage";
 import { UserInfoPage } from "../features/UserInfoPaje/UserInfoPage";
 import { LoginPage } from "../features/LogInPage/LoginPage";
-import { Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { ErrorSnackbar } from "../common/ErrorSnackBar/ErrorSnackBar";
 import { useAppDispatch, useAppSelector } from "../app-hooks/hooks";
 import { isInitializingMe } from "../store/reducers/app-reducer";
@@ -23,7 +23,7 @@ import { PackListPage } from "../features/PackListPage/PackListPage";
 import { CardsPackPage } from "../features/CardsPackPage/CardsPackPage";
 import { LearnPage } from "../features/LearnPage/LearnPage";
 
-const App = React.memo(() => {
+export const App = React.memo(() => {
   const isInitialized = useAppSelector((state) => state.app.isInitialized);
   const requestStatus = useAppSelector((state) => state.app.status);
 
@@ -52,44 +52,43 @@ const App = React.memo(() => {
       <ErrorSnackbar />
       <AppBarMenu />
       {requestStatus === "loading" && <LinearProgress color="inherit" />}
-
-      <Container fixed>
-        <Grid
-          container
-          justifyContent="space-evenly"
-          alignItems="center"
-          style={{ marginTop: "20px" }}
-        >
-          <Routes>
-            <Route element={<PrivateRoute />}>
-              <Route path={PATH.PROFILE} element={<UserInfoPage />} />
-              <Route path={PATH.PACK_LIST} element={<PackListPage />} />
+      <HashRouter>
+        <Container fixed>
+          <Grid
+            container
+            justifyContent="space-evenly"
+            alignItems="center"
+            style={{ marginTop: "20px" }}
+          >
+            <Routes>
+              <Route element={<PrivateRoute />}>
+                <Route path={PATH.PROFILE} element={<UserInfoPage />} />
+                <Route path={PATH.PACK_LIST} element={<PackListPage />} />
+                <Route
+                  path={`${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
+                  element={<LearnPage />}
+                />
+                <Route
+                  path={`${PATH.CARDS_PACK}/${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
+                  element={<LearnPage />}
+                />
+                <Route
+                  path={`${PATH.CARDS_PACK}/:cardsPack_id`}
+                  element={<CardsPackPage />}
+                />
+              </Route>
+              <Route path={PATH.REGISTRATION} element={<RegistrationPage />} />
+              <Route path={PATH.LOGIN} element={<LoginPage />} />
               <Route
-                path={`${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
-                element={<LearnPage />}
+                path={PATH.RECOVERY_PASS}
+                element={<PasswordRecoveryPage />}
               />
-              <Route
-                path={`${PATH.CARDS_PACK}/${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
-                element={<LearnPage />}
-              />
-              <Route
-                path={`${PATH.CARDS_PACK}/:cardsPack_id`}
-                element={<CardsPackPage />}
-              />
-            </Route>
-            <Route path={PATH.REGISTRATION} element={<RegistrationPage />} />
-            <Route path={PATH.LOGIN} element={<LoginPage />} />
-            <Route
-              path={PATH.RECOVERY_PASS}
-              element={<PasswordRecoveryPage />}
-            />
-            <Route path={PATH.CHECK_EMAIL} element={<CheckEmailPage />} />
-            <Route path={PATH.NEW_PASS} element={<NewPassPage />} />
-          </Routes>
-        </Grid>
-      </Container>
+              <Route path={PATH.CHECK_EMAIL} element={<CheckEmailPage />} />
+              <Route path={PATH.NEW_PASS} element={<NewPassPage />} />
+            </Routes>
+          </Grid>
+        </Container>
+      </HashRouter>
     </div>
   );
 });
-
-export default App;
