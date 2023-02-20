@@ -52,43 +52,41 @@ export const App = React.memo(() => {
       <ErrorSnackbar />
       <AppBarMenu />
       {requestStatus === "loading" && <LinearProgress color="inherit" />}
-      <HashRouter>
-        <Container fixed>
-          <Grid
-            container
-            justifyContent="space-evenly"
-            alignItems="center"
-            style={{ marginTop: "20px" }}
-          >
-            <Routes>
-              <Route element={<PrivateRoute />}>
-                <Route path={PATH.PROFILE} element={<UserInfoPage />} />
-                <Route path={PATH.PACK_LIST} element={<PackListPage />} />
-                <Route
-                  path={`${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
-                  element={<LearnPage />}
-                />
-                <Route
-                  path={`${PATH.CARDS_PACK}/${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
-                  element={<LearnPage />}
-                />
-                <Route
-                  path={`${PATH.CARDS_PACK}/:cardsPack_id`}
-                  element={<CardsPackPage />}
-                />
-              </Route>
-              <Route path={PATH.REGISTRATION} element={<RegistrationPage />} />
-              <Route path={PATH.LOGIN} element={<LoginPage />} />
+      <Container fixed>
+        <Grid
+          container
+          justifyContent="space-evenly"
+          alignItems="center"
+          style={{ marginTop: "20px" }}
+        >
+          <Routes>
+            <Route element={<PrivateRoute />}>
+              <Route path={PATH.PROFILE} element={<UserInfoPage />} />
+              <Route path={PATH.PACK_LIST} element={<PackListPage />} />
               <Route
-                path={PATH.RECOVERY_PASS}
-                element={<PasswordRecoveryPage />}
+                path={`${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
+                element={<LearnPage />}
               />
-              <Route path={PATH.CHECK_EMAIL} element={<CheckEmailPage />} />
-              <Route path={PATH.NEW_PASS} element={<NewPassPage />} />
-            </Routes>
-          </Grid>
-        </Container>
-      </HashRouter>
+              <Route
+                path={`${PATH.CARDS_PACK}/${PATH.LEARN_CARDS_PACK}/:cardsPack_id`}
+                element={<LearnPage />}
+              />
+              <Route
+                path={`${PATH.CARDS_PACK}/:cardsPack_id`}
+                element={<CardsPackPage />}
+              />
+            </Route>
+            <Route path={PATH.REGISTRATION} element={<RegistrationPage />} />
+            <Route path={PATH.LOGIN} element={<LoginPage />} />
+            <Route
+              path={PATH.RECOVERY_PASS}
+              element={<PasswordRecoveryPage />}
+            />
+            <Route path={PATH.CHECK_EMAIL} element={<CheckEmailPage />} />
+            <Route path={PATH.NEW_PASS} element={<NewPassPage />} />
+          </Routes>
+        </Grid>
+      </Container>
     </div>
   );
 });
